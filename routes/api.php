@@ -20,7 +20,8 @@ use App\Http\Controllers\{
 //     return $request->user();
 // });
 
+Route::get("month/days", [EventController::class, "list_month_days"]);
 Route::prefix("events")->group(function(){{
-    Route::get("list", [EventController::class, "list"]);
+    Route::get("/", [EventController::class, "list"]);
     Route::post("store", [EventController::class, "store"]);
 }});
